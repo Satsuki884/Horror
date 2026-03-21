@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class Decoration : MonoBehaviour
 {
-    // public DecorationType type;
+    [SerializeField] private DecorationType type;
 }
