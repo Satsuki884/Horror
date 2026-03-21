@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _walkSpeed = 5f;
     [SerializeField] private float _sprintSpeed = 10f;
+    [SerializeField] private float _rotationSpeed = 10f;
+    [SerializeField] private Transform _startPoint;
 
     private float _currentSpeed;
 
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_rb == null)
             _rb = GetComponent<Rigidbody2D>();
+        transform.position = _startPoint.position;
     }
 
     private void Start()
@@ -23,7 +26,6 @@ public class PlayerController : MonoBehaviour
         _currentSpeed = _walkSpeed;
     }
 
-    // INPUT SYSTEM
     public void OnMove(InputValue value)
     {
         _moveInput = value.Get<Vector2>();
@@ -49,14 +51,12 @@ public class PlayerController : MonoBehaviour
         RotateToMouse();
     }
 
-    // РУХ
     private void Move()
     {
         Vector2 move = _moveInput * _currentSpeed;
         _rb.MovePosition(_rb.position + move * Time.fixedDeltaTime);
     }
 
-    // ПОВОРОТ У НАПРЯМКУ РУХУ
     private void RotateToMovement()
     {
         if (_moveInput.magnitude > 0.1f)
@@ -68,32 +68,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // ортографічний поворот до миші
-    // private void RotateToMouse()
-    // {
-    //     if (Mouse.current.leftButton.isPressed)
-    //     {
-    //         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-    //         mousePos.z = 0f;
-
-    //         Vector3 direction = mousePos - transform.position;
-
-    //         if (direction.sqrMagnitude > 0.01f)
-    //         {
-    //             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-    //             Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
-
-    //             transform.rotation = Quaternion.Lerp(
-    //                 transform.rotation,
-    //                 targetRotation,
-    //                 15f * Time.deltaTime
-    //             );
-    //         }
-    //     }
-    // }
-
-    // перспективний поворот до миші
     private void RotateToMouse()
     {
         if (Mouse.current.leftButton.isPressed)

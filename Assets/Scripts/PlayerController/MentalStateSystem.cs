@@ -1,6 +1,7 @@
 using UnityEngine;
 using Unity.Cinemachine;
 using System.Collections.Generic;
+using TMPro;
 
 public class MentalStateSystem : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class MentalStateSystem : MonoBehaviour
 
     [Header("Passive Increase")]
     [SerializeField] private float _increaseSpeed = 5f;
+
+    [Header("UI")]
+    [SerializeField] private GameObject _infoPanel;
+    [SerializeField] private TMP_Text _infoText;
 
     private bool _stalkerActive = false;
 
@@ -119,7 +124,8 @@ public class MentalStateSystem : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("GAME OVER");
+        _infoPanel.SetActive(true);
+        _infoText.text = "Your mind is broken... You lose!";
         Time.timeScale = 0f;
     }
 
