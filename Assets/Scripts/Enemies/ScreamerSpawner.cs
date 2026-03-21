@@ -60,7 +60,7 @@ public class ScreamerSpawner : MonoBehaviour
         }
 
         MentalStateSystem.Instance.SpawnScreamer();
-        Debug.Log("Spawned Screamer");
+        // Debug.Log("Spawned Screamer");
     }
 
     private int CountScreamersOnScene()
