@@ -1,6 +1,5 @@
 using UnityEngine;
 using Unity.Cinemachine;
-using System.Collections.Generic;
 using TMPro;
 
 public class MentalStateSystem : MonoBehaviour
@@ -25,10 +24,11 @@ public class MentalStateSystem : MonoBehaviour
 
     [Header("Camera Effects")]
     [SerializeField] private CinemachineCamera _camera;
-    [SerializeField] private float _maxShake = 2f;
+    [SerializeField] private float _maxShake = 20f;
 
-    [Header("Passive Increase")]
-    [SerializeField] private float _increaseSpeed = 5f;
+    [Header("Mental Increase")]
+    [SerializeField] private float _passiveIncreaseSpeed = 0.25f;
+    [SerializeField] private float _stalkerBonusIncrease = 0.5f;
 
     [Header("UI")]
     [SerializeField] private GameObject _infoPanel;
@@ -43,25 +43,45 @@ public class MentalStateSystem : MonoBehaviour
 
     private void Update()
     {
-        HandleStalker();
+        HandleStalker();          // сначала обновляем состояние
+        HandleMentalIncrease();   // потом считаем рост
         HandleEffects();
     }
+
+    // ===================== MENTAL =====================
 
     public void AddMental(float amount)
     {
         if (MentalValue >= _maxValue) return;
+
         MentalValue += amount;
         MentalValue = Mathf.Clamp(MentalValue, 0f, _maxValue);
-        Debug.Log($"Mental: {MentalValue}");
     }
 
     public void ReduceMental(float amount)
     {
         if (MentalValue <= 0f) return;
+
         MentalValue -= amount;
         MentalValue = Mathf.Clamp(MentalValue, 0f, _maxValue);
-        Debug.Log($"Mental: {MentalValue}");
     }
+
+    private void HandleMentalIncrease()
+    {
+        float speed = _passiveIncreaseSpeed;
+
+        if (_stalkerActive)
+        {
+            speed += _stalkerBonusIncrease;
+        }
+
+        // (опционально) усиление от текущей менталки
+        float stressMultiplier = MentalValue / 500f;
+
+        AddMental(speed * stressMultiplier * Time.deltaTime);
+    }
+
+    // ===================== STALKER =====================
 
     private void HandleStalker()
     {
@@ -72,8 +92,6 @@ public class MentalStateSystem : MonoBehaviour
                 SpawnStalker();
                 _stalkerActive = true;
             }
-
-            AddMental(_increaseSpeed * Time.deltaTime);
         }
         else
         {
@@ -104,13 +122,14 @@ public class MentalStateSystem : MonoBehaviour
             Destroy(_currentStalker);
     }
 
+    // ===================== EFFECTS =====================
+
     private void HandleEffects()
     {
         if (_camera == null) return;
 
         float normalized = MentalValue / _maxValue;
 
-        // тряска камери
         var noise = _camera.GetComponent<CinemachineBasicMultiChannelPerlin>();
         if (noise != null)
         {
@@ -130,10 +149,12 @@ public class MentalStateSystem : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    // ===================== SPAWN =====================
+
     public void SpawnScreamer()
     {
-        Vector3 direction = Random.onUnitSphere; // тільки напрямок
-        direction.z = 0f; // щоб не летів вверх/вниз
+        Vector3 direction = Random.onUnitSphere;
+        direction.z = 0f;
         direction.Normalize();
 
         float distance = Random.Range(_screamerSpawnDistanceMin, _screamerSpawnDistanceMax);
@@ -142,7 +163,7 @@ public class MentalStateSystem : MonoBehaviour
         pos.z = _player.position.z;
 
         GameObject obj = Instantiate(_screamerEnemyPrefab, pos, Quaternion.identity);
-        obj.transform.SetParent(transform); // щоб організувати в ієрархії
+        obj.transform.SetParent(transform);
 
         var enemy = obj.GetComponent<IEnemy>();
         enemy?.Initialize(_player);
@@ -150,8 +171,8 @@ public class MentalStateSystem : MonoBehaviour
 
     public void SpawnPotion()
     {
-        Vector3 direction = Random.onUnitSphere; // тільки напрямок
-        direction.z = 0f; // щоб не летів вверх/вниз
+        Vector3 direction = Random.onUnitSphere;
+        direction.z = 0f;
         direction.Normalize();
 
         float distance = Random.Range(_screamerSpawnDistanceMin, _screamerSpawnDistanceMax);

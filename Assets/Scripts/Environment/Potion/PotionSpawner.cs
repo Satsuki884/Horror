@@ -51,6 +51,12 @@ public class PotionSpawner : MonoBehaviour
     {
         if (MentalStateSystem.Instance == null) return;
 
+        // ✅ проверка менталки
+        if (MentalStateSystem.Instance.MentalValue < 65f)
+        {
+            return;
+        }
+
         int current = CountPotionsOnScene();
 
         if (current >= _maxSpawnsOnScene)
@@ -60,7 +66,6 @@ public class PotionSpawner : MonoBehaviour
         }
 
         MentalStateSystem.Instance.SpawnPotion();
-        // Debug.Log("Spawned Potion");
     }
 
     private int CountPotionsOnScene()
