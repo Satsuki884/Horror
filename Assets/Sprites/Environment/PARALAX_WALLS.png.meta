@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 86278add85d1eb44b8543368eb2795c1
+guid: 0e221b340fc67f6408b8fdecafde3bcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -338278690478020703
-    second: PARALAX_WALLS_0
+      213: 4852813999444811706
+    second: WALLS_3_0
   - first:
-      213: 4470016824508363471
-    second: PARALAX_WALLS_1
+      213: 7067122232889737455
+    second: WALLS_3_1
   - first:
-      213: 7379886321076471978
-    second: PARALAX_WALLS_2
+      213: -530198834328203475
+    second: WALLS_3_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -145,67 +145,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PARALAX_WALLS_0
+      name: WALLS_3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 11664
-        height: 10368
+        width: 0
+        height: 0
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a729f2c2513e4bf0800000000000000
-      internalID: -338278690478020703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PARALAX_WALLS_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 501
-        height: 501
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc237d46e90b80e30800000000000000
-      internalID: 4470016824508363471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PARALAX_WALLS_2
-      rect:
-        serializedVersion: 2
-        x: 11163
-        y: 0
-        width: 501
-        height: 501
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aa8078a328f9a6660800000000000000
-      internalID: 7379886321076471978
+      spriteID: abf53f50f98a85340800000000000000
+      internalID: 4852813999444811706
       vertices: []
       indices: 
       edges: []
@@ -214,7 +170,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a3e68c667371ba74e82b41c48a4b4549
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -224,9 +180,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PARALAX_WALLS_0: -338278690478020703
-      PARALAX_WALLS_1: 4470016824508363471
-      PARALAX_WALLS_2: 7379886321076471978
+      WALLS_3_0: 4852813999444811706
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
