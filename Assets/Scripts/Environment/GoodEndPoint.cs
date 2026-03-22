@@ -5,12 +5,13 @@ public class GoodEndPoint : MonoBehaviour
 {
     [SerializeField] private GameObject _infoPanel;
     [SerializeField] private TMP_Text _infoText;
+    [SerializeField] private PlayerSO _playerSO;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            if (PlayerPrefs.GetInt("HasKey", 0) == 1)
+            if (_playerSO.HasKey)
             {
                 _infoPanel.SetActive(true);
                 _infoText.text = "You have the key! You win!";
