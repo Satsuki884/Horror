@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerSO", menuName = "ScriptableObjects/Player")]
@@ -22,13 +23,10 @@ public class PlayerSO : ScriptableObject
     [SerializeField] private bool _hasThirdAmulet = false;
     public bool HasThirdAmulet => _hasThirdAmulet;
     [SerializeField] private bool _hasFirstStory = false;
-    [SerializeField] private GameObject _firstStoryPrefab;
     public bool HasFirstStory => _hasFirstStory;
     [SerializeField] private bool _hasSecondStory = false;
-    [SerializeField] private GameObject _secondStoryPrefab;
     public bool HasSecondStory => _hasSecondStory;
     [SerializeField] private bool _hasThirdStory = false;
-    [SerializeField] private GameObject _thirdStoryPrefab;
     public bool HasThirdStory => _hasThirdStory;
 
     public void ObtainKey(KeyType type)
@@ -45,6 +43,7 @@ public class PlayerSO : ScriptableObject
                 _hasThirdKey = true;
                 break;
         }
+        UpdateUI();
         _hasKey = _hasFirstKey && _hasSecondKey && _hasThirdKey;
     }
 
@@ -62,6 +61,7 @@ public class PlayerSO : ScriptableObject
                 _hasThirdAmulet = true;
                 break;
         }
+        UpdateUI();
         _hasAmulet = _hasFirstAmulet && _hasSecondAmulet && _hasThirdAmulet;
     }
 
@@ -69,21 +69,30 @@ public class PlayerSO : ScriptableObject
 
     public void ObtainStory(StoryType type)
     {
-        Canvas canvas = FindAnyObjectByType<Canvas>();
         switch (type)
         {
             case StoryType.First:
                 _hasFirstStory = true;
-                Instantiate(_firstStoryPrefab, canvas.transform);
                 break;
             case StoryType.Second:
                 _hasSecondStory = true;
-                Instantiate(_secondStoryPrefab, canvas.transform);
                 break;
             case StoryType.Third:
                 _hasThirdStory = true;
-                Instantiate(_thirdStoryPrefab, canvas.transform);
                 break;
+        }
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        UIManager ui = FindAnyObjectByType<UIManager>();
+
+        if (ui != null)
+        {
+            ui.UpdateKeysUI();
+            ui.UpdateAmuletsUI();
+            ui.UpdateStoriesUI();
         }
     }
 }
