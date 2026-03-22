@@ -24,7 +24,7 @@ public class MentalStateSystem : MonoBehaviour
 
     [Header("Camera Effects")]
     [SerializeField] private CinemachineCamera _camera;
-    [SerializeField] private float _maxShake = 2f;
+    [SerializeField] private float _maxShake = 20f;
 
     [Header("Mental Increase")]
     [SerializeField] private float _passiveIncreaseSpeed = 0.25f;
@@ -76,7 +76,7 @@ public class MentalStateSystem : MonoBehaviour
         }
 
         // (опционально) усиление от текущей менталки
-        float stressMultiplier = 1f + (MentalValue / 200f);
+        float stressMultiplier = MentalValue / 500f;
 
         AddMental(speed * stressMultiplier * Time.deltaTime);
     }
