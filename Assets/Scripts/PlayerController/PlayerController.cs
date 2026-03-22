@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerSO playerSO;
     [SerializeField] private Transform _startPoint;
+    [SerializeField] private Animator _animator;
 
     private float _currentSpeed;
 
@@ -29,11 +30,6 @@ public class PlayerController : MonoBehaviour
         _moveInput = value.Get<Vector2>();
     }
 
-    public void OnSprint(InputValue value)
-    {
-        _currentSpeed = value.Get<float>() > 0.5f ? playerSO.SprintSpeed : playerSO.WalkSpeed;
-    }
-
     private void FixedUpdate()
     {
         Move();
@@ -46,7 +42,13 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        RotateToMouse();
+        RotateToMouse(); UpdateAnimations();
+    }
+
+    private void UpdateAnimations()
+    {
+        float speed = _moveInput.magnitude;
+        _animator.SetFloat("Speed", speed);
     }
 
     private void Move()

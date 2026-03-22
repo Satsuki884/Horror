@@ -7200,6 +7200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   playerSO: {fileID: 11400000, guid: 27f8a20b44b5c984386e9c3d74a2f5b7, type: 2}
   _startPoint: {fileID: 2665153642267852317}
+  _animator: {fileID: 1956672408}
 --- !u!212 &1956672402
 SpriteRenderer:
   serializedVersion: 2
