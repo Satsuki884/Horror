@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 02b30fc251b96104491c43c49d96ae5f
+guid: 6d6ae86c559341e488fe886209753e38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4907043352527717516
-    second: 0059_0
+      213: -3402816046540829602
+    second: well_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 0059_0
+      name: well_0
       rect:
         serializedVersion: 2
-        x: 125
-        y: 91
-        width: 326
-        height: 365
+        x: 0
+        y: 0
+        width: 390
+        height: 391
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c844bd43ee1591440800000000000000
-      internalID: 4907043352527717516
+      spriteID: e5c4fe5a5d4c6c0d0800000000000000
+      internalID: -3402816046540829602
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      0059_0: 4907043352527717516
+      well_0: -3402816046540829602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
