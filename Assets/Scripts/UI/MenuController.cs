@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Button _quitButton;
     [SerializeField] private Button _infoButton;
     [SerializeField] private Button _closeInfoButton;
+    [SerializeField] private PlayerSO _playerSO;
 
     private bool isSoundEnabled;
     void Start()
@@ -33,5 +34,6 @@ public class MenuController : MonoBehaviour
     {
         Time.timeScale = 1f;
         _panelsController.ActivatedPanel(null);
+        _playerSO.ResetPlayerData();
     }
 }

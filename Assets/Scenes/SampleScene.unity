@@ -4713,7 +4713,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -14288,6 +14288,7 @@ MonoBehaviour:
   _quitButton: {fileID: 1326920473}
   _infoButton: {fileID: 1326059175}
   _closeInfoButton: {fileID: 142358282}
+  _playerSO: {fileID: 11400000, guid: 27f8a20b44b5c984386e9c3d74a2f5b7, type: 2}
 --- !u!1 &2022680976
 GameObject:
   m_ObjectHideFlags: 0

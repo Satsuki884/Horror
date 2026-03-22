@@ -95,4 +95,21 @@ public class PlayerSO : ScriptableObject
             ui.UpdateStoriesUI();
         }
     }
+
+    public void ResetPlayerData()
+    {
+        _hasKey = false;
+        _hasFirstKey = false;
+        _hasSecondKey = false;
+        _hasThirdKey = false;
+        _hasAmulet = false;
+        _hasFirstAmulet = false;
+        _hasSecondAmulet = false;
+        _hasThirdAmulet = false;
+        _hasFirstStory = false;
+        _hasSecondStory = false;
+        _hasThirdStory = false;
+
+        UpdateUI();
+    }
 }
