@@ -3,9 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float _walkSpeed = 5f;
-    [SerializeField] private float _sprintSpeed = 10f;
-    [SerializeField] private float _rotationSpeed = 10f;
+    [SerializeField] private PlayerSO playerSO;
     [SerializeField] private Transform _startPoint;
 
     private float _currentSpeed;
@@ -23,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        _currentSpeed = _walkSpeed;
+        _currentSpeed = playerSO.WalkSpeed;
     }
 
     public void OnMove(InputValue value)
@@ -33,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnSprint(InputValue value)
     {
-        _currentSpeed = value.Get<float>() > 0.5f ? _sprintSpeed : _walkSpeed;
+        _currentSpeed = value.Get<float>() > 0.5f ? playerSO.SprintSpeed : playerSO.WalkSpeed;
     }
 
     private void FixedUpdate()
