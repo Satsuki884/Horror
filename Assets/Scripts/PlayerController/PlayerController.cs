@@ -42,7 +42,23 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        RotateToMouse(); UpdateAnimations();
+        // RotateToMouse(); 
+        FlipToMouse();
+        UpdateAnimations();
+    }
+
+    private void FlipToMouse()
+    {
+        Vector3 mouseScreen = Mouse.current.position.ReadValue();
+        mouseScreen.z = Mathf.Abs(Camera.main.transform.position.z);
+
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouseScreen);
+
+        Vector2 direction = mouseWorld - transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     private void UpdateAnimations()
