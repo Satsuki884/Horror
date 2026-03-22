@@ -5,7 +5,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerSO playerSO;
     [SerializeField] private Transform _startPoint;
+
     [SerializeField] private Animator _animator;
+    [SerializeField] private AudioManager audioManager;
 
     private float _currentSpeed;
 
@@ -42,9 +44,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // RotateToMouse(); 
         FlipToMouse();
         UpdateAnimations();
+        bool isMoving = _moveInput.sqrMagnitude > 0.01f;
+        audioManager.SetWalking(isMoving);
     }
 
     private void FlipToMouse()

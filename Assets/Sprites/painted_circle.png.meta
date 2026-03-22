@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/painted_circle.png.meta
 guid: a799d429996725e49bc54f013ccb076f
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3889011193161857446
     second: painted_circle_0
+========
+guid: 56e51228eea9bef4faeb55050a83fde9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9197251812230017989
+    second: GROUND_2_0
+>>>>>>>> origin/Features/Sound:Assets/Sprites/Terrain/GROUND_2.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +106,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +135,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/painted_circle.png.meta
       name: painted_circle_0
+========
+      name: GROUND_2_0
+>>>>>>>> origin/Features/Sound:Assets/Sprites/Terrain/GROUND_2.png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
+<<<<<<<< HEAD:Assets/Sprites/painted_circle.png.meta
         width: 2048
         height: 2048
+========
+        width: 5832
+        height: 5184
+>>>>>>>> origin/Features/Sound:Assets/Sprites/Terrain/GROUND_2.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +159,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Assets/Sprites/painted_circle.png.meta
       spriteID: a56c118bce4770ac0800000000000000
       internalID: -3889011193161857446
+========
+      spriteID: 5c3b9c94bc333af70800000000000000
+      internalID: 9197251812230017989
+>>>>>>>> origin/Features/Sound:Assets/Sprites/Terrain/GROUND_2.png.meta
       vertices: []
       indices: 
       edges: []
@@ -174,7 +184,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:Assets/Sprites/painted_circle.png.meta
       painted_circle_0: -3889011193161857446
+========
+      GROUND_2_0: 9197251812230017989
+>>>>>>>> origin/Features/Sound:Assets/Sprites/Terrain/GROUND_2.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
