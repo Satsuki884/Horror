@@ -40,6 +40,8 @@ public class ScreamerEnemy : BaseEnemy
 
         MentalStateSystem.Instance?.AddMental(_mentalDamage);
 
+        AudioManager.Instanse.PlayScreamer();
+
         Debug.Log("SCREAM!");
         Destroy(gameObject, 0.5f);
         Destroy(_currentVisual, 2f);

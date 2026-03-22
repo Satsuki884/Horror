@@ -20,6 +20,7 @@ public class ScreamerSpawner : MonoBehaviour
     private float _maxReachedTimer = 0f;
     private float _cleanupTimer = 0f;
 
+
     private void Start()
     {
         if (_autoStart)
@@ -99,6 +100,7 @@ public class ScreamerSpawner : MonoBehaviour
         }
 
         MentalStateSystem.Instance.SpawnScreamer();
+
     }
 
     private int CountScreamersOnScene()

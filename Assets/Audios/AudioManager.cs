@@ -5,15 +5,24 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instanse;
+    private void Awake()
+    {
+        Instanse = this;
+    }
+
     [Header("---Audio Source---")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource SFXSource;
     [SerializeField] private AudioMixer audioMixer;
 
+    [SerializeField] private AudioSource screamerSource;
+
     [Header("---Audio Clip---")]
     public AudioClip background;
     public AudioClip[] walk;
     public AudioClip death;
+    public AudioClip screamer;
 
     [Header("---Footsteps---")]
     [SerializeField] private float stepDelay = 0.5f;
@@ -71,6 +80,18 @@ public class AudioManager : MonoBehaviour
         SFXSource.pitch = 1f;
         SFXSource.PlayOneShot(clip);
     }
+
+    // ================= Screamer =================
+    public void PlayScreamer()
+    {
+        if (screamer == null || SFXSource == null) return;
+
+        SFXSource.pitch = Random.Range(0.92f, 1.08f);
+        SFXSource.volume = 1f;
+        SFXSource.PlayOneShot(screamer);
+    }
+
+
     public void SetWalking(bool walking)
     {
         if (isWalking == walking) return;
