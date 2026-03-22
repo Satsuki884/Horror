@@ -2481,11 +2481,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1048231432}
   - {fileID: 1895723959}
   - {fileID: 575843831}
   - {fileID: 242808951}
   - {fileID: 1502447553}
-  - {fileID: 1048231432}
   m_Father: {fileID: 1100377893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8428,6 +8428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key1
       objectReference: {fileID: 0}
+    - target: {fileID: 4596813867608828000, guid: 503f52def0ec1e94487dfd4c4cea78da, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2011034731825299770, guid: 660f1a7b51135c44dbc81b9d206e300e, type: 3}
     - target: {fileID: 4974472038529136276, guid: 503f52def0ec1e94487dfd4c4cea78da, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11687,6 +11691,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4088343760735290518, guid: b3847ce9e956d3043a908e2ca39c4b7a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2921961296558992098, guid: ec42572facc8adb4085605bf615566c7, type: 3}
     - target: {fileID: 4368867381587050656, guid: b3847ce9e956d3043a908e2ca39c4b7a, type: 3}
       propertyPath: m_Name
       value: Key3
@@ -14242,6 +14250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key2
       objectReference: {fileID: 0}
+    - target: {fileID: 7955527526286850654, guid: aa96934d13c0ea34ab658b974deccf38, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6247066915208783547, guid: 2e6d29fd469600d4d82c27708592b18a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
