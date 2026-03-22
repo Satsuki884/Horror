@@ -16,8 +16,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource SFXSource;
     [SerializeField] private AudioMixer audioMixer;
 
-    [SerializeField] private AudioSource screamerSource;
-
     [Header("---Audio Clip---")]
     public AudioClip background;
     public AudioClip[] walk;

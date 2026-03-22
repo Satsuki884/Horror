@@ -17101,6 +17101,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 70d53ba9bbd2fa34aa9af1e69660cda6, type: 3}
   - {fileID: 8300000, guid: 86f271b2c3fb88e4eae00b4ab85ae037, type: 3}
   death: {fileID: 8300000, guid: cdc881f2b0234534babefb4727667df2, type: 3}
+  screamer: {fileID: 8300000, guid: 6cf9bc05fe9506649a554773820f2292, type: 3}
   stepDelay: 0.5
 --- !u!61 &6561620323352206274
 BoxCollider2D:
