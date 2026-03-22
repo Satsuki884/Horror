@@ -5,10 +5,6 @@ public class PlayerSO : ScriptableObject
 {
     [SerializeField] private float _walkSpeed = 5f;
     public float WalkSpeed => _walkSpeed;
-    [SerializeField] private float _sprintSpeed = 10f;
-    public float SprintSpeed => _sprintSpeed;
-    [SerializeField] private float _rotationSpeed = 10f;
-    public float RotationSpeed => _rotationSpeed;
     [SerializeField] private bool _hasKey = false;
     public bool HasKey => _hasKey;
     [SerializeField] private bool _hasFirstKey = false;
