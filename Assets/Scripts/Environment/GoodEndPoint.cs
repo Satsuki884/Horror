@@ -16,14 +16,14 @@ public class GoodEndPoint : MonoBehaviour
             if (_playerSO.HasKey)
             {
                 _endPanel.SetActive(true);
-                Time.timeScale = 0f; // Pause the game
-                _endText.text = "You have the key! You win!";
+                // Time.timeScale = 0f; // Pause the game
+                _endText.text = "Fresh air brushes against your face, yet what you have witnessed here will stay with you forever.";
                 return;
             }
             else
             {
                 _infoPanel.SetActive(true);
-                _infoText.text = "You need the key to proceed!";
+                _infoText.text = "You need keys to proceed!";
             }
         }
     }

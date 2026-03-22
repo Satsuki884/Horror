@@ -16,14 +16,14 @@ public class BadEndPoint : MonoBehaviour
             if (_playerSO.HasAmulet)
             {
                 _endPanel.SetActive(true);
-                Time.timeScale = 0f; // Pause the game
-                _endText.text = "You have the amulet! But it's too late... You lose!";
+                // Time.timeScale = 0f; // Pause the game
+                _endText.text = "Beneath the crushing weight of the stone mask, your head falls from your shoulders, offering a final sacrifice to the last god.";
                 return;
             }
             else
             {
                 _infoPanel.SetActive(true);
-                _infoText.text = "You need the amulet to proceed!";
+                _infoText.text = "You need amulets to proceed!";
             }
         }
     }

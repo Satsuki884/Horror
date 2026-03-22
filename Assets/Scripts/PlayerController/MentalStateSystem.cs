@@ -145,8 +145,8 @@ public class MentalStateSystem : MonoBehaviour
     private void GameOver()
     {
         _endPanel.SetActive(true);
-        _endText.text = "Your mind is broken... You lose!";
-        Time.timeScale = 0f;
+        _endText.text = "Your mind is broken...";
+        // Time.timeScale = 0f;
     }
 
     // ===================== SPAWN =====================
