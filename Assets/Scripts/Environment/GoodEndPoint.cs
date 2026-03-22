@@ -6,6 +6,8 @@ public class GoodEndPoint : MonoBehaviour
     [SerializeField] private GameObject _infoPanel;
     [SerializeField] private TMP_Text _infoText;
     [SerializeField] private PlayerSO _playerSO;
+    [SerializeField] private GameObject _endPanel;
+    [SerializeField] private TMP_Text _endText;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,8 +15,9 @@ public class GoodEndPoint : MonoBehaviour
         {
             if (_playerSO.HasKey)
             {
-                _infoPanel.SetActive(true);
-                _infoText.text = "You have the key! You win!";
+                _endPanel.SetActive(true);
+                Time.timeScale = 0f; // Pause the game
+                _endText.text = "You have the key! You win!";
                 return;
             }
             else
@@ -30,6 +33,7 @@ public class GoodEndPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _infoPanel.SetActive(false);
+            _endPanel.SetActive(false);
         }
     }
 }

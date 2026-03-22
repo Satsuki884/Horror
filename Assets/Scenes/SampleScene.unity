@@ -12336,8 +12336,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4285501352
+  m_fontColor: {r: 0.65882355, g: 0.56078434, b: 0.43529415, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14406,8 +14406,8 @@ MonoBehaviour:
   _maxShake: 2
   _passiveIncreaseSpeed: 0.5
   _stalkerBonusIncrease: 1.5
-  _infoPanel: {fileID: 1895723958}
-  _infoText: {fileID: 1575642310}
+  _endPanel: {fileID: 242808950}
+  _endText: {fileID: 1656937250}
 --- !u!4 &2022680978
 Transform:
   m_ObjectHideFlags: 0
@@ -17694,6 +17694,8 @@ MonoBehaviour:
   _infoPanel: {fileID: 1895723958}
   _infoText: {fileID: 1575642310}
   _playerSO: {fileID: 11400000, guid: 27f8a20b44b5c984386e9c3d74a2f5b7, type: 2}
+  _endPanel: {fileID: 242808950}
+  _endText: {fileID: 1656937250}
 --- !u!224 &8284149656639023919
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17727,6 +17729,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BadEndPoint
   _infoPanel: {fileID: 1895723958}
   _infoText: {fileID: 1575642310}
+  _endPanel: {fileID: 242808950}
+  _endText: {fileID: 1656937250}
   _playerSO: {fileID: 11400000, guid: 27f8a20b44b5c984386e9c3d74a2f5b7, type: 2}
 --- !u!1 &8474333429384480151
 GameObject:

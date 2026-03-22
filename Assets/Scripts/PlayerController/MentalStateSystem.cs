@@ -31,8 +31,8 @@ public class MentalStateSystem : MonoBehaviour
     [SerializeField] private float _stalkerBonusIncrease = 0.5f;
 
     [Header("UI")]
-    [SerializeField] private GameObject _infoPanel;
-    [SerializeField] private TMP_Text _infoText;
+    [SerializeField] private GameObject _endPanel;
+    [SerializeField] private TMP_Text _endText;
 
     private bool _stalkerActive = false;
 
@@ -144,8 +144,8 @@ public class MentalStateSystem : MonoBehaviour
 
     private void GameOver()
     {
-        _infoPanel.SetActive(true);
-        _infoText.text = "Your mind is broken... You lose!";
+        _endPanel.SetActive(true);
+        _endText.text = "Your mind is broken... You lose!";
         Time.timeScale = 0f;
     }
 
