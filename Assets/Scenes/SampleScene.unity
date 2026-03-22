@@ -4627,7 +4627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: StartGame
+  m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7b148fa04781b748b7c569ae6f67c5c, type: 2}
   m_sharedMaterial: {fileID: -4796271174218324034, guid: d7b148fa04781b748b7c569ae6f67c5c, type: 2}
@@ -7893,7 +7893,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Horror
+  m_text: Remis V
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7b148fa04781b748b7c569ae6f67c5c, type: 2}
   m_sharedMaterial: {fileID: -4796271174218324034, guid: d7b148fa04781b748b7c569ae6f67c5c, type: 2}
@@ -7920,7 +7920,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 199.85
+  m_fontSize: 171
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9772,9 +9772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ExitGame
-
-'
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7b148fa04781b748b7c569ae6f67c5c, type: 2}
   m_sharedMaterial: {fileID: -4796271174218324034, guid: d7b148fa04781b748b7c569ae6f67c5c, type: 2}
@@ -10772,7 +10770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1530186453
 RectTransform:
   m_ObjectHideFlags: 0
