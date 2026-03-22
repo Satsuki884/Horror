@@ -11,6 +11,7 @@ public class MentalStateSystem : MonoBehaviour
     public float MentalValue = 60f;
 
     [SerializeField] private float _maxValue = 100f;
+    [SerializeField] private GameObject _potionPrefab;
 
     [Header("Stalker")]
     [SerializeField] private GameObject _stalkerEnemyPrefab;
@@ -141,8 +142,24 @@ public class MentalStateSystem : MonoBehaviour
         pos.z = _player.position.z;
 
         GameObject obj = Instantiate(_screamerEnemyPrefab, pos, Quaternion.identity);
+        obj.transform.SetParent(transform); // щоб організувати в ієрархії
 
         var enemy = obj.GetComponent<IEnemy>();
         enemy?.Initialize(_player);
+    }
+
+    public void SpawnPotion()
+    {
+        Vector3 direction = Random.onUnitSphere; // тільки напрямок
+        direction.z = 0f; // щоб не летів вверх/вниз
+        direction.Normalize();
+
+        float distance = Random.Range(_screamerSpawnDistanceMin, _screamerSpawnDistanceMax);
+
+        Vector3 pos = _player.position + direction * distance;
+        pos.z = _player.position.z;
+
+        GameObject obj = Instantiate(_potionPrefab, pos, Quaternion.identity);
+        obj.transform.SetParent(transform);
     }
 }

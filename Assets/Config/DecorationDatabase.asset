@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681a211d26292c14bb196e4595c09862, type: 3}
   m_Name: DecorationDatabase
   m_EditorClassIdentifier: Assembly-CSharp::DecorationDatabase
-  decorations: []
+  decorations:
+  - _type: 0
+    _prefab: {fileID: 0}

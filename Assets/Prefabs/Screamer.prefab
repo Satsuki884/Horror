@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7972175434303547622}
   - component: {fileID: 3075746222606661110}
+  - component: {fileID: 5438949817556439569}
   - component: {fileID: 4735545742924221450}
   m_Layer: 5
   m_Name: Screamer
@@ -45,6 +46,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8830467525139952221}
   m_CullTransparentMesh: 1
+--- !u!114 &5438949817556439569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830467525139952221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f802ba4e56aa83d49b8b794b5ff3194e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreamerVisual
+  _screamerSprites:
+  - {fileID: 1770013450482122997, guid: 092df723d5e1a1644acc9aaa985a620b, type: 3}
+  - {fileID: -2858330702786226967, guid: e03c80f8cb327824ba8644665653a174, type: 3}
+  - {fileID: -4722666447823364708, guid: f8d014e964a97c44e93a8cff49a84afb, type: 3}
+  - {fileID: -964824239653993824, guid: 14284370d761ab942812f459f984be2d, type: 3}
+  _spriteRenderer: {fileID: 4735545742924221450}
 --- !u!114 &4735545742924221450
 MonoBehaviour:
   m_ObjectHideFlags: 0

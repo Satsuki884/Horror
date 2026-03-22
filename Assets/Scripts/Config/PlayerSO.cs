@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerSO", menuName = "ScriptableObjects/Player")]
@@ -5,10 +6,6 @@ public class PlayerSO : ScriptableObject
 {
     [SerializeField] private float _walkSpeed = 5f;
     public float WalkSpeed => _walkSpeed;
-    [SerializeField] private float _sprintSpeed = 10f;
-    public float SprintSpeed => _sprintSpeed;
-    [SerializeField] private float _rotationSpeed = 10f;
-    public float RotationSpeed => _rotationSpeed;
     [SerializeField] private bool _hasKey = false;
     public bool HasKey => _hasKey;
     [SerializeField] private bool _hasFirstKey = false;
@@ -25,6 +22,12 @@ public class PlayerSO : ScriptableObject
     public bool HasSecondAmulet => _hasSecondAmulet;
     [SerializeField] private bool _hasThirdAmulet = false;
     public bool HasThirdAmulet => _hasThirdAmulet;
+    [SerializeField] private bool _hasFirstStory = false;
+    public bool HasFirstStory => _hasFirstStory;
+    [SerializeField] private bool _hasSecondStory = false;
+    public bool HasSecondStory => _hasSecondStory;
+    [SerializeField] private bool _hasThirdStory = false;
+    public bool HasThirdStory => _hasThirdStory;
 
     public void ObtainKey(KeyType type)
     {
@@ -40,6 +43,7 @@ public class PlayerSO : ScriptableObject
                 _hasThirdKey = true;
                 break;
         }
+        UpdateUI();
         _hasKey = _hasFirstKey && _hasSecondKey && _hasThirdKey;
     }
 
@@ -57,6 +61,38 @@ public class PlayerSO : ScriptableObject
                 _hasThirdAmulet = true;
                 break;
         }
+        UpdateUI();
         _hasAmulet = _hasFirstAmulet && _hasSecondAmulet && _hasThirdAmulet;
+    }
+
+
+
+    public void ObtainStory(StoryType type)
+    {
+        switch (type)
+        {
+            case StoryType.First:
+                _hasFirstStory = true;
+                break;
+            case StoryType.Second:
+                _hasSecondStory = true;
+                break;
+            case StoryType.Third:
+                _hasThirdStory = true;
+                break;
+        }
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        UIManager ui = FindAnyObjectByType<UIManager>();
+
+        if (ui != null)
+        {
+            ui.UpdateKeysUI();
+            ui.UpdateAmuletsUI();
+            ui.UpdateStoriesUI();
+        }
     }
 }

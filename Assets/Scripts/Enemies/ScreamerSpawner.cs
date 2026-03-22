@@ -13,11 +13,50 @@ public class ScreamerSpawner : MonoBehaviour
 
     private Coroutine _spawnRoutine;
 
+    [Header("Cleanup Settings")]
+    [SerializeField] private float _stuckTime = 30f; // сколько ждать
+    [SerializeField] private float _cleanupInterval = 5f; // как часто удалять
+
+    private float _maxReachedTimer = 0f;
+    private float _cleanupTimer = 0f;
+
     private void Start()
     {
         if (_autoStart)
         {
             StartSpawning();
+        }
+    }
+
+    private void Update()
+    {
+        int current = CountScreamersOnScene();
+
+        if (current >= _maxSpawnsOnScene)
+        {
+            _maxReachedTimer += Time.deltaTime;
+
+            if (_maxReachedTimer >= _stuckTime)
+            {
+                _cleanupTimer += Time.deltaTime;
+
+                if (_cleanupTimer >= _cleanupInterval)
+                {
+                    _cleanupTimer = 0f;
+
+                    ScreamerEnemy[] screamers = FindObjectsByType<ScreamerEnemy>(FindObjectsSortMode.None);
+
+                    if (screamers.Length > 0)
+                    {
+                        Destroy(screamers[0].gameObject);
+                    }
+                }
+            }
+        }
+        else
+        {
+            _maxReachedTimer = 0f;
+            _cleanupTimer = 0f;
         }
     }
 
@@ -55,12 +94,11 @@ public class ScreamerSpawner : MonoBehaviour
 
         if (current >= _maxSpawnsOnScene)
         {
-            Debug.Log("Too many screamers on scene");
+            // просто не спавним
             return;
         }
 
         MentalStateSystem.Instance.SpawnScreamer();
-        // Debug.Log("Spawned Screamer");
     }
 
     private int CountScreamersOnScene()

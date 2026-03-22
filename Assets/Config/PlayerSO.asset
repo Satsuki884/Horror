@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ee891956ee56d43be4b040e3d95a6c, type: 3}
   m_Name: PlayerSO
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSO
-  _walkSpeed: 5
-  _sprintSpeed: 10
-  _rotationSpeed: 10
-  _startPoint: {fileID: 0}
+  _walkSpeed: 6
   _hasKey: 0
   _hasFirstKey: 0
   _hasSecondKey: 0
@@ -24,3 +21,6 @@ MonoBehaviour:
   _hasFirstAmulet: 0
   _hasSecondAmulet: 0
   _hasThirdAmulet: 0
+  _hasFirstStory: 0
+  _hasSecondStory: 1
+  _hasThirdStory: 1

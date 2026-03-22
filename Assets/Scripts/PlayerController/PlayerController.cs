@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerSO playerSO;
     [SerializeField] private Transform _startPoint;
+
+    [SerializeField] private Animator _animator;
     [SerializeField] private AudioManager audioManager;
 
     private float _currentSpeed;
@@ -30,11 +32,6 @@ public class PlayerController : MonoBehaviour
         _moveInput = value.Get<Vector2>();
     }
 
-    public void OnSprint(InputValue value)
-    {
-        _currentSpeed = value.Get<float>() > 0.5f ? playerSO.SprintSpeed : playerSO.WalkSpeed;
-    }
-
     private void FixedUpdate()
     {
         Move();
@@ -47,9 +44,30 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        RotateToMouse();
+        FlipToMouse();
+        UpdateAnimations();
         bool isMoving = _moveInput.sqrMagnitude > 0.01f;
         audioManager.SetWalking(isMoving);
+    }
+
+    private void FlipToMouse()
+    {
+        Vector3 mouseScreen = Mouse.current.position.ReadValue();
+        mouseScreen.z = Mathf.Abs(Camera.main.transform.position.z);
+
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouseScreen);
+
+        Vector2 direction = mouseWorld - transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
+    private void UpdateAnimations()
+    {
+        float speed = _moveInput.magnitude;
+        _animator.SetFloat("Speed", speed);
     }
 
     private void Move()
