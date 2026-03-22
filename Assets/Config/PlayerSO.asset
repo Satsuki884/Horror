@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSO
   _walkSpeed: 6
   _hasKey: 0
-  _hasFirstKey: 0
-  _hasSecondKey: 0
+  _hasFirstKey: 1
+  _hasSecondKey: 1
   _hasThirdKey: 0
   _hasAmulet: 0
   _hasFirstAmulet: 0
   _hasSecondAmulet: 0
   _hasThirdAmulet: 0
   _hasFirstStory: 0
-  _hasSecondStory: 1
-  _hasThirdStory: 1
+  _hasSecondStory: 0
+  _hasThirdStory: 0
