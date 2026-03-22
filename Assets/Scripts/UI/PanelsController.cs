@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PanelsController : MonoBehaviour
@@ -12,6 +13,8 @@ public class PanelsController : MonoBehaviour
     public GameObject EndGamePanel => _endGamePanel;
     [SerializeField] private GameObject _pausePanel;
     public GameObject PausePanel => _pausePanel;
+    [SerializeField] private GameObject _storyPanel;
+    public GameObject StoryPanel => _storyPanel;
 
     public void Start()
     {
@@ -20,6 +23,8 @@ public class PanelsController : MonoBehaviour
         _gamePanel.SetActive(false);
         _endGamePanel.SetActive(false);
         _pausePanel.SetActive(false);
+        _storyPanel.SetActive(false);
+
     }
 
     public void ActivatedPanel(GameObject panel)
