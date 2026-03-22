@@ -9,6 +9,10 @@ public class PauseController : MonoBehaviour
     [SerializeField] private Button _resumeButton;
     [SerializeField] private Button _toMainMenuButton;
 
+    [SerializeField] private Slider Music_Slider;
+    [SerializeField] private Slider SFX_Slider;
+    [SerializeField] private AudioManager audioManager;
+
     private void Start()
     {
         _pauseButton.onClick.RemoveAllListeners();
@@ -17,6 +21,22 @@ public class PauseController : MonoBehaviour
         _pauseButton.onClick.AddListener(PauseGame);
         _resumeButton.onClick.AddListener(ResumeGame);
         _toMainMenuButton.onClick.AddListener(ToMainMenu);
+
+        Music_Slider.onValueChanged.AddListener(audioManager.SetMusicVolume);
+        SFX_Slider.onValueChanged.AddListener(audioManager.SetSFXVolume);
+
+        audioManager.SetMusicVolume(Music_Slider.value);
+        audioManager.SetSFXVolume(SFX_Slider.value);
+    }
+
+    private void SetMusicVolume(float value)
+    {
+        AudioListener.volume = value;
+    }
+
+    private void SetSFXVolume(float value)
+    {
+        AudioListener.volume = value;
     }
 
     private void Update()
@@ -40,12 +60,14 @@ public class PauseController : MonoBehaviour
         
         _panelsController.ActivatedPanel(_panelsController.PausePanel);
         Time.timeScale = 0f;
+        audioManager.PauseMusic();
     }
 
     private void ResumeGame()
     {
         Time.timeScale = 1f;
         _panelsController.ActivatedPanel(null);
+        audioManager.ResumeMusic();
     }
 
     private void ToMainMenu()

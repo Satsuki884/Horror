@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Button _infoButton;
     [SerializeField] private Button _closeInfoButton;
     [SerializeField] private Button _soundButton;
+    [SerializeField] private AudioManager audioManager;
 
     [Header("Sound")]
     [SerializeField] private Image _soundIcon;
@@ -41,6 +42,7 @@ public class MenuController : MonoBehaviour
     {
         Time.timeScale = 1f;
         _panelsController.ActivatedPanel(null);
+        audioManager.StartMusic();
     }
 
     void SoundOnOff()
